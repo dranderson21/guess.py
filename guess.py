@@ -1,17 +1,29 @@
-import random
+def main():
 
-rnjesus = (random.randrange(1, 100, 1))
+    import random
 
-def correct_answer():
-    if int(guess) == (rnjesus):
-        print("Correct! " + str(rnjesus) + " is the number!")
+    rnjesus = (random.randrange(1, 100, 1))
 
-guess = int(input("Guess a number 1-100: "))
+    def correct_answer():
+        if int(guess) == (rnjesus):
+            print("Correct! " + str(rnjesus) + " is the number!")
 
-while int(guess) != (rnjesus):
-    if int(guess) > (rnjesus):
-        guess = int(input("Lower: "))
-    elif int(guess) < (rnjesus):
-        guess = int(input("Higher: "))
+    guess = int(input("Guess a number 1-100: "))
 
-correct_answer()
+    while int(guess) != (rnjesus):
+        if int(guess) > (rnjesus):
+            guess = int(input("Lower: "))
+        elif int(guess) < (rnjesus):
+            guess = int(input("Higher: "))
+
+    correct_answer()
+    
+    again = input("Play Again? (y/n): ")
+    if again == "y":
+        main()
+    elif again == "n":
+        print("Closing Application...")
+    else:
+        print("Invalid Entry. Closing Application...")
+    
+main()
